@@ -5,6 +5,7 @@ import Search from "./Search"
 import { useState } from "react"
 import Filters from "./Filters"
 import Ordering from "./Ordering"
+import Itens from "./Itens"
 
 export default function Menu() {
     const [search, setSearch] = useState("");
@@ -28,6 +29,7 @@ export default function Menu() {
                     <Filters filter={ filter } setFilter={ setFilter }/>
                     <Ordering ordering={ ordering } setOrdering={ setOrdering }/>
                 </div>
+                <Itens search={ search } filter={ filter } ordering={ ordering }/>
             </section>
         </>
     )
