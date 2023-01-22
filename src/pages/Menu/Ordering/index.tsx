@@ -1,8 +1,8 @@
-import styles from './Ordering.module.scss'
-import options from './options.json'
-import { useState } from 'react'
+import styles from './Ordering.module.scss';
+import options from './options.json';
+import { useState } from 'react';
 import classNames from 'classnames';
-import { MdKeyboardArrowUp, MdKeyboardArrowDown} from 'react-icons/md'
+import { MdKeyboardArrowUp, MdKeyboardArrowDown} from 'react-icons/md';
 
 interface Props {
     ordering: string,
@@ -11,25 +11,25 @@ interface Props {
 
 export default function Ordering({ ordering, setOrdering }: Props) {
     const [open , setOpen] = useState(false);
-    const nameOrdering = ordering && options.find(option => option.value === ordering)?.name
+    const nameOrdering = ordering && options.find(option => option.value === ordering)?.name;
     return(
         <button 
             className={ classNames({
                 [styles.ordering]: true,
-                [styles["ordering--active"]] : ordering !== "",
+                [styles['ordering--active']] : ordering !== '',
             }) }
             onClick={() => setOpen(!open)}
             onBlur={() => setOpen(false)}
         >
             <span>
-                { nameOrdering || "Ordenador Por" }
+                { nameOrdering || 'Ordenador Por' }
             </span>
 
             { open ? <MdKeyboardArrowUp size={ 20 } /> : <MdKeyboardArrowDown size={ 20 } /> }
 
             <div className={ classNames({
                 [styles.ordering__options]: true,
-                [styles["ordering__options--active"]]: open, 
+                [styles['ordering__options--active']]: open, 
             }) }>
                 { options.map(option => (
                     <div 
@@ -42,5 +42,5 @@ export default function Ordering({ ordering, setOrdering }: Props) {
                 )) }
             </div>
         </button>
-    )
+    );
 }

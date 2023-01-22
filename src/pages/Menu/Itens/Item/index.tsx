@@ -1,5 +1,5 @@
-import styles from './Item.module.scss'
-import menu from '../itens.json'
+import styles from './Item.module.scss';
+import menu from '../itens.json';
 import classNames from 'classnames';
 
 type Props = typeof menu[0];
@@ -28,7 +28,7 @@ export default function Item(props: Props) {
                         { size }g
                     </div>
                     <div className={ styles.item__qtdpessoas }>
-                        Serve { serving } pessoa{ serving === 1 ? "" : "s" }
+                        Serve { serving } pessoa{ serving === 1 ? '' : 's' }
                     </div>
                     <div className={ styles.item__valor }>
                         R$ { price.toFixed(2) }
@@ -36,5 +36,5 @@ export default function Item(props: Props) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
