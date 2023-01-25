@@ -1,10 +1,5 @@
 @import 'styles/variaveis';
 
-.title {
-  color: $dark;
-  font-size: 3rem;
-  margin-bottom: 30px;
-}
 .recomendeds {
   border-radius: 2px;
   display: flex;
@@ -12,15 +7,18 @@
   gap: 30px;
   justify-content: space-between;
 }
+
 .recomended {
   &__image {
     width: 300px;
     margin-bottom: 10px;
+
     img {
       border-radius: 8px;
       width: 100%;
     }
   }
+
   &__button {
     background-color: $red;
     border: none;
@@ -32,19 +30,23 @@
     padding: 10px 0;
     transition: .2s ease;
     width: 100%;
+
     &:hover {
       background-color: $red-dark;
     }
   }
 }
+
 .ourHome {
   margin-bottom: 100px;
   position: relative;
   width: 100%;
+
   img {
     border-radius: 5px;
     width: 100%;
   }
+
   &__address {
     align-items: center;
     background-color: $dark;
