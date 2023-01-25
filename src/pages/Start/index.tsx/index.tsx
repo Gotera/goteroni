@@ -2,10 +2,17 @@ import menu from '../../data/menu.json';
 import styles from './Start.module.scss';
 import stylesTheme from 'styles/Theme.module.scss';
 import nossaCasa from 'assets/nossa_casa.png';
+import { useNavigate } from 'react-router-dom';
+import { Dish } from 'types/Dish';
 
 export default function Start() {
   let recomendedDishes = [...menu];
   recomendedDishes = recomendedDishes.sort(() => 0.5 - Math.random()).splice(0, 3);
+
+  const navigate = useNavigate();
+  function redirectToDetails(dish: Dish) {
+    navigate(`/dish/${dish.id}`, { state: { dish } });
+  }
   return (
     <section>
       <h3 className={stylesTheme.title}>
@@ -17,7 +24,10 @@ export default function Start() {
             <div className={styles.recomended__image}>
               <img src={item.photo} alt={item.title} />
             </div>
-            <button className={styles.recomended__button}>
+            <button
+              className={styles.recomended__button}
+              onClick={() => redirectToDetails(item)}
+            >
               Ver mais
             </button>
           </div>

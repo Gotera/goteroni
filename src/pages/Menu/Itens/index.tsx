@@ -2,6 +2,7 @@ import menu from '../../data/menu.json';
 import Item from './Item';
 import styles from './Itens.module.scss';
 import { useEffect, useState } from 'react';
+import { Menu } from 'types/Dish';
 
 interface Props {
   search: string,
@@ -22,7 +23,7 @@ export default function Itens(props: Props) {
     if (filter !== null) return filter === id;
     return true;
   }
-  function order(newList: typeof menu) {
+  function order(newList: Menu) {
     switch (ordering) {
     case 'porcao':
       return newList.sort((a, b) => a.size > b.size ? 1 : -1);
